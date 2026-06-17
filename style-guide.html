@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cyclar — Style Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/css/tokens.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      color: var(--clr-text);
+      background: var(--clr-bg-alt);
+      line-height: var(--leading-normal);
+    }
+
+    .wrap {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: var(--sp-10) var(--sp-6);
+    }
+
+    /* ── Header ── */
+    .sg-header {
+      padding-bottom: var(--sp-8);
+      border-bottom: 1px solid var(--clr-border);
+      margin-bottom: var(--sp-12);
+    }
+
+    .sg-wordmark {
+      font-family: var(--font-head);
+      font-size: var(--text-xl);
+      font-weight: var(--w-extrabold);
+      color: var(--clr-text);
+      letter-spacing: -0.02em;
+    }
+
+    .sg-wordmark-dot { color: var(--clr-brand); }
+
+    .sg-header-sub {
+      margin-top: var(--sp-2);
+      font-size: var(--text-sm);
+      color: var(--clr-text-2);
+    }
+
+    .sg-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--sp-1) var(--sp-4);
+      margin-top: var(--sp-5);
+    }
+
+    .sg-nav a {
+      font-size: var(--text-sm);
+      font-weight: var(--w-medium);
+      color: var(--clr-brand);
+      text-decoration: none;
+    }
+
+    .sg-nav a:hover { text-decoration: underline; }
+
+    /* ── Sections ── */
+    .sg-section { margin-bottom: var(--sp-20); }
+
+    .sg-section-title {
+      font-size: var(--text-xs);
+      font-weight: var(--w-semibold);
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      color: var(--clr-text-3);
+      padding-bottom: var(--sp-3);
+      border-bottom: 1px solid var(--clr-border);
+      margin-bottom: var(--sp-8);
+    }
+
+    /* ── Swatch grid ── */
+    .swatch-group { margin-bottom: var(--sp-8); }
+
+    .swatch-group-label {
+      font-size: var(--text-xs);
+      font-weight: var(--w-semibold);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--clr-text-3);
+      margin-bottom: var(--sp-3);
+    }
+
+    .swatches {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: var(--sp-3);
+    }
+
+    .swatch {
+      border-radius: var(--r-md);
+      overflow: hidden;
+      background: var(--clr-bg);
+      border: 1px solid var(--clr-border);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .swatch-color { height: 68px; }
+
+    .swatch-info { padding: var(--sp-3); }
+
+    .swatch-token {
+      font-size: 11px;
+      font-family: ui-monospace, 'Cascadia Code', monospace;
+      color: var(--clr-text-2);
+      margin-bottom: var(--sp-1);
+    }
+
+    .swatch-hex {
+      font-size: var(--text-sm);
+      font-weight: var(--w-semibold);
+      color: var(--clr-text);
+      font-family: ui-monospace, 'Cascadia Code', monospace;
+    }
+
+    .swatch-role {
+      font-size: 11px;
+      color: var(--clr-text-3);
+      margin-top: 3px;
+    }
+
+    /* ── Type scale ── */
+    .type-table { width: 100%; }
+
+    .type-row {
+      display: flex;
+      align-items: baseline;
+      gap: var(--sp-8);
+      padding: var(--sp-6) 0;
+      border-bottom: 1px solid var(--clr-border);
+    }
+
+    .type-row:first-child { border-top: 1px solid var(--clr-border); }
+
+    .type-meta {
+      flex-shrink: 0;
+      width: 130px;
+      font-size: 11px;
+      font-family: ui-monospace, 'Cascadia Code', monospace;
+      color: var(--clr-text-3);
+      line-height: 1.7;
+    }
+
+    .type-sample { flex: 1; min-width: 0; }
+
+    /* Heading classes — these will be used in index.html too */
+    .t-h1 {
+      font-family: var(--font-head);
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: var(--w-extrabold);
+      line-height: var(--leading-tight);
+      letter-spacing: -0.03em;
+      color: var(--clr-text);
+    }
+
+    .t-h2 {
+      font-family: var(--font-head);
+      font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+      font-weight: var(--w-bold);
+      line-height: var(--leading-tight);
+      letter-spacing: -0.02em;
+      color: var(--clr-text);
+    }
+
+    .t-h3 {
+      font-family: var(--font-head);
+      font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+      font-weight: var(--w-semibold);
+      line-height: var(--leading-snug);
+      letter-spacing: -0.01em;
+      color: var(--clr-text);
+    }
+
+    .t-h4 {
+      font-family: var(--font-head);
+      font-size: clamp(1.0625rem, 2vw, 1.375rem);
+      font-weight: var(--w-semibold);
+      line-height: var(--leading-snug);
+      color: var(--clr-text);
+    }
+
+    .t-body-lg {
+      font-size: var(--text-lg);
+      line-height: var(--leading-relaxed);
+      color: var(--clr-text-2);
+    }
+
+    .t-body {
+      font-size: var(--text-base);
+      line-height: var(--leading-normal);
+      color: var(--clr-text-2);
+    }
+
+    .t-small {
+      font-size: var(--text-sm);
+      line-height: var(--leading-normal);
+      color: var(--clr-text-3);
+    }
+
+    .t-caps {
+      font-size: var(--text-xs);
+      font-weight: var(--w-semibold);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--clr-text-3);
+    }
+
+    /* ── Spacing scale ── */
+    .space-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-3);
+    }
+
+    .space-row {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-4);
+    }
+
+    .space-token {
+      font-size: 11px;
+      font-family: ui-monospace, monospace;
+      color: var(--clr-text-2);
+      width: 72px;
+      flex-shrink: 0;
+    }
+
+    .space-bar {
+      height: 20px;
+      background: var(--clr-brand-dim);
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+
+    .space-rem {
+      font-size: 11px;
+      font-family: ui-monospace, monospace;
+      color: var(--clr-text-3);
+    }
+
+    /* ── Radius ── */
+    .radius-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--sp-8);
+      align-items: flex-end;
+    }
+
+    .radius-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--sp-3);
+    }
+
+    .radius-box {
+      width: 64px;
+      height: 64px;
+      background: var(--clr-brand-dim);
+      border: 2px solid var(--clr-brand);
+    }
+
+    .radius-pill {
+      width: 96px;
+      height: 40px;
+      background: var(--clr-brand-dim);
+      border: 2px solid var(--clr-brand);
+      border-radius: var(--r-full);
+    }
+
+    .radius-label {
+      font-size: 11px;
+      font-family: ui-monospace, monospace;
+      color: var(--clr-text-2);
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    /* ── Components ── */
+    .comp-group { margin-bottom: var(--sp-10); }
+
+    .comp-label {
+      font-size: var(--text-xs);
+      font-weight: var(--w-semibold);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--clr-text-3);
+      margin-bottom: var(--sp-4);
+    }
+
+    .comp-surface {
+      background: var(--clr-bg);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--r-lg);
+      padding: var(--sp-6);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: var(--sp-3);
+    }
+
+    .comp-surface-alt { background: var(--clr-bg-alt); }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--sp-2);
+      padding: 0.6875rem var(--sp-6);
+      border-radius: var(--r-full);
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      font-weight: var(--w-semibold);
+      line-height: 1;
+      cursor: pointer;
+      border: 2px solid transparent;
+      text-decoration: none;
+      transition: background var(--t-fast), color var(--t-fast), border-color var(--t-fast);
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--clr-brand);
+      color: var(--clr-text-inv);
+      border-color: var(--clr-brand);
+    }
+
+    .btn-primary:hover {
+      background: var(--clr-brand-dark);
+      border-color: var(--clr-brand-dark);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--clr-brand);
+      border-color: var(--clr-brand);
+    }
+
+    .btn-secondary:hover {
+      background: var(--clr-brand-tint);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--clr-text-2);
+      border-color: transparent;
+    }
+
+    .btn-ghost:hover {
+      color: var(--clr-text);
+      background: var(--clr-surface);
+    }
+
+    .btn-sm {
+      padding: var(--sp-2) var(--sp-4);
+      font-size: var(--text-sm);
+    }
+
+    /* Badges */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 3px var(--sp-3);
+      border-radius: var(--r-full);
+      font-size: var(--text-xs);
+      font-weight: var(--w-semibold);
+    }
+
+    .badge-brand {
+      background: var(--clr-brand-dim);
+      color: var(--clr-brand-dark);
+    }
+
+    .badge-neutral {
+      background: var(--clr-surface);
+      color: var(--clr-text-2);
+    }
+
+    /* Cards */
+    .card {
+      background: var(--clr-bg);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--r-lg);
+      box-shadow: var(--shadow-sm);
+      padding: var(--sp-6);
+    }
+
+    .card-feature {
+      display: flex;
+      gap: var(--sp-4);
+      align-items: flex-start;
+    }
+
+    .card-icon {
+      width: 40px;
+      height: 40px;
+      flex-shrink: 0;
+      border-radius: var(--r-md);
+      background: var(--clr-brand-tint);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+
+    .card-title {
+      font-family: var(--font-head);
+      font-size: var(--text-base);
+      font-weight: var(--w-semibold);
+      color: var(--clr-text);
+      margin-bottom: var(--sp-1);
+    }
+
+    .card-body {
+      font-size: var(--text-sm);
+      color: var(--clr-text-2);
+      line-height: var(--leading-relaxed);
+    }
+
+    /* Stat card */
+    .stat-card {
+      background: var(--clr-bg);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--r-md);
+      padding: var(--sp-4) var(--sp-5);
+      min-width: 140px;
+    }
+
+    .stat-label {
+      font-size: var(--text-xs);
+      color: var(--clr-text-3);
+      margin-bottom: var(--sp-1);
+    }
+
+    .stat-value {
+      font-family: var(--font-head);
+      font-size: var(--text-2xl);
+      font-weight: var(--w-bold);
+      color: var(--clr-text);
+      letter-spacing: -0.02em;
+    }
+
+    .stat-value.green { color: var(--clr-brand); }
+
+    /* ── Mobile ── */
+    @media (max-width: 600px) {
+      .wrap { padding: var(--sp-6) var(--sp-4); }
+      .type-row { flex-direction: column; gap: var(--sp-2); }
+      .type-meta { width: auto; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <!-- Header -->
+    <header class="sg-header">
+      <div class="sg-wordmark">Cyclar <span class="sg-wordmark-dot">·</span> Style Guide</div>
+      <p class="sg-header-sub">Design tokens and visual language for cyclar.co — Light mode · Updated June 2026</p>
+      <nav class="sg-nav" aria-label="Jump to section">
+        <a href="#colors">Colors</a>
+        <a href="#type">Typography</a>
+        <a href="#spacing">Spacing</a>
+        <a href="#radius">Radius</a>
+        <a href="#components">Components</a>
+      </nav>
+    </header>
+
+
+    <!-- ── Colors ── -->
+    <section class="sg-section" id="colors">
+      <h2 class="sg-section-title">Color Palette</h2>
+
+      <div class="swatch-group">
+        <div class="swatch-group-label">Brand</div>
+        <div class="swatches">
+          <div class="swatch">
+            <div class="swatch-color" style="background:#059669"></div>
+            <div class="swatch-info">
+              <div class="swatch-token">--clr-brand</div>
+              <div class="swatch-hex">#059669</div>
+              <div class="swatch-role">Primary / CTA</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#047857"></div>
+            <div class="swatch-info">
+              <div class="swatch-token">--clr-brand-dark</div>
+              <div class="swatch-hex">#047857</div>
+              <div class="swatch-role">Hover / Active</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#D1FAE5"></div>
+            <div class="swatch-info">
+              <div class="swatch-token">--clr-brand-dim</div>
+              <div class="swatch-hex">#D1FAE5</div>
+              <div class="swatch-role">Tint / Highlight bg</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#ECFDF5; border-bottom:1px solid #E5E7EB"></div>
+            <div class="swatch-info">
+              <div class="swatch-token">--clr-brand-tint</div>
+              <div class="swatch-hex">#ECFDF5</div>
+              <div class="swatch-role">Subtle fill / Icon bg</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="swatch-group">
+        <div class="swatch-group-label">Text</div>
+        <div class="swatches">
+          <div class="swatch">
+            <div class="swatch-color" style="background:#111827"></div>
+            <div class="swatch-info">
+              <div class="swatch-token">--clr-text</div>
+              <div class="swatch-hex">#111827</div>
+              <div class="swatch-role">Headings, primary</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#6B7280"></div>
+            <div class="swatch-info">
+              <div class="swatch-token">--clr-text-2</div>
+              <div class="swatch-hex">#6B7280</div>
+              <div class="swatch-role">Body, secondary</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#9CA3AF"></div>
+            <div class="swatch-info">
+              <div class="swatch-token">--clr-text-3</div>
+              <div class="swatch-hex">#9CA3AF</div>
+              <div class="swatch-role">Muted, placeholder</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="swatch-group">
+        <div class="swatch-group-label">Surfaces &amp; Borders</div>
+        <div class="swatches">
+          <div class="swatch">
+            <div class="swatch-color" style="background:#FFFFFF; border-bottom:1px solid #E5E7EB"></div>
+            <div class="swatch-info">
+              <div class="swatch-token">--clr-bg</div>
+              <div class="swatch-hex">#FFFFFF</div>
+              <div class="swatch-role">Base background</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#F9FAFB"></div>
+            <div class="swatch-info">
+              <div class="swatch-token">--clr-bg-alt</div>
+              <div class="swatch-hex">#F9FAFB</div>
+              <div class="swatch-role">Section background</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#F3F4F6"></div>
+            <div class="swatch-info">
+              <div class="swatch-token">--clr-surface</div>
+              <div class="swatch-hex">#F3F4F6</div>
+              <div class="swatch-role">Card fill, inputs</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#E5E7EB"></div>
+            <div class="swatch-info">
+              <div class="swatch-token">--clr-border</div>
+              <div class="swatch-hex">#E5E7EB</div>
+              <div class="swatch-role">Borders, dividers</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="swatch-group">
+        <div class="swatch-group-label">Status</div>
+        <div class="swatches">
+          <div class="swatch">
+            <div class="swatch-color" style="background:#EF4444"></div>
+            <div class="swatch-info">
+              <div class="swatch-token">--clr-danger</div>
+              <div class="swatch-hex">#EF4444</div>
+              <div class="swatch-role">Error, overdue</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#F59E0B"></div>
+            <div class="swatch-info">
+              <div class="swatch-token">--clr-warning</div>
+              <div class="swatch-hex">#F59E0B</div>
+              <div class="swatch-role">Warning, due soon</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ── Typography ── -->
+    <section class="sg-section" id="type">
+      <h2 class="sg-section-title">Typography</h2>
+
+      <p style="font-size:var(--text-sm);color:var(--clr-text-2);margin-bottom:var(--sp-8);">
+        Headings (H1–H4) use <strong style="color:var(--clr-text)">Manrope</strong> via Google Fonts.
+        Body text uses the <strong style="color:var(--clr-text)">system font stack</strong>.
+        All heading sizes use <code style="font-size:11px;background:var(--clr-surface);padding:2px 6px;border-radius:4px;">clamp()</code> for fluid scaling between mobile and desktop.
+      </p>
+
+      <div class="type-table">
+        <div class="type-row">
+          <div class="type-meta">H1<br>Manrope 800<br>clamp(2–3rem)<br>track −0.03em</div>
+          <div class="type-sample t-h1">Know where you stand.</div>
+        </div>
+        <div class="type-row">
+          <div class="type-meta">H2<br>Manrope 700<br>clamp(1.5–2.25rem)<br>track −0.02em</div>
+          <div class="type-sample t-h2">Your finances, finally clear.</div>
+        </div>
+        <div class="type-row">
+          <div class="type-meta">H3<br>Manrope 600<br>clamp(1.25–1.75rem)<br>track −0.01em</div>
+          <div class="type-sample t-h3">Bills, income, debt — all in one place.</div>
+        </div>
+        <div class="type-row">
+          <div class="type-meta">H4<br>Manrope 600<br>clamp(1.06–1.375rem)</div>
+          <div class="type-sample t-h4">Track what matters. Skip what doesn't.</div>
+        </div>
+        <div class="type-row">
+          <div class="type-meta">Body Large<br>System 400<br>1.125rem / 18px</div>
+          <div class="type-sample t-body-lg">Cyclar gives you a clear, reliable view of your financial life — replacing the low-grade anxiety of not knowing with something better: confidence.</div>
+        </div>
+        <div class="type-row">
+          <div class="type-meta">Body<br>System 400<br>1rem / 16px</div>
+          <div class="type-sample t-body">Most people know money is coming in and bills are coming due — they just don't have a clear picture of how it all fits together. Cyclar changes that.</div>
+        </div>
+        <div class="type-row">
+          <div class="type-meta">Small<br>System 400<br>0.875rem / 14px</div>
+          <div class="type-sample t-small">No credit card required · 30-day free trial · Cancel anytime</div>
+        </div>
+        <div class="type-row">
+          <div class="type-meta">Caps / Label<br>System 600<br>0.75rem / 12px<br>track +0.08em</div>
+          <div class="type-sample t-caps">Subscription · Features · Pricing</div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ── Spacing ── -->
+    <section class="sg-section" id="spacing">
+      <h2 class="sg-section-title">Spacing Scale</h2>
+      <div class="space-list">
+        <div class="space-row"><span class="space-token">--sp-1</span><div class="space-bar" style="width:calc(var(--sp-1) * 3)"></div><span class="space-rem">0.25rem</span></div>
+        <div class="space-row"><span class="space-token">--sp-2</span><div class="space-bar" style="width:calc(var(--sp-2) * 3)"></div><span class="space-rem">0.5rem</span></div>
+        <div class="space-row"><span class="space-token">--sp-3</span><div class="space-bar" style="width:calc(var(--sp-3) * 3)"></div><span class="space-rem">0.75rem</span></div>
+        <div class="space-row"><span class="space-token">--sp-4</span><div class="space-bar" style="width:calc(var(--sp-4) * 3)"></div><span class="space-rem">1rem</span></div>
+        <div class="space-row"><span class="space-token">--sp-5</span><div class="space-bar" style="width:calc(var(--sp-5) * 3)"></div><span class="space-rem">1.25rem</span></div>
+        <div class="space-row"><span class="space-token">--sp-6</span><div class="space-bar" style="width:calc(var(--sp-6) * 3)"></div><span class="space-rem">1.5rem</span></div>
+        <div class="space-row"><span class="space-token">--sp-8</span><div class="space-bar" style="width:calc(var(--sp-8) * 3)"></div><span class="space-rem">2rem</span></div>
+        <div class="space-row"><span class="space-token">--sp-10</span><div class="space-bar" style="width:calc(var(--sp-10) * 3)"></div><span class="space-rem">2.5rem</span></div>
+        <div class="space-row"><span class="space-token">--sp-12</span><div class="space-bar" style="width:calc(var(--sp-12) * 3)"></div><span class="space-rem">3rem</span></div>
+        <div class="space-row"><span class="space-token">--sp-16</span><div class="space-bar" style="width:calc(var(--sp-16) * 3)"></div><span class="space-rem">4rem</span></div>
+        <div class="space-row"><span class="space-token">--sp-20</span><div class="space-bar" style="width:calc(var(--sp-20) * 3)"></div><span class="space-rem">5rem</span></div>
+        <div class="space-row"><span class="space-token">--sp-24</span><div class="space-bar" style="width:calc(var(--sp-24) * 3)"></div><span class="space-rem">6rem</span></div>
+      </div>
+    </section>
+
+
+    <!-- ── Border Radius ── -->
+    <section class="sg-section" id="radius">
+      <h2 class="sg-section-title">Border Radius</h2>
+      <div class="radius-row">
+        <div class="radius-item">
+          <div class="radius-box" style="border-radius:var(--r-sm)"></div>
+          <div class="radius-label">--r-sm<br>6px</div>
+        </div>
+        <div class="radius-item">
+          <div class="radius-box" style="border-radius:var(--r-md)"></div>
+          <div class="radius-label">--r-md<br>10px</div>
+        </div>
+        <div class="radius-item">
+          <div class="radius-box" style="border-radius:var(--r-lg)"></div>
+          <div class="radius-label">--r-lg<br>16px<br>cards</div>
+        </div>
+        <div class="radius-item">
+          <div class="radius-box" style="border-radius:var(--r-xl)"></div>
+          <div class="radius-label">--r-xl<br>24px<br>modals</div>
+        </div>
+        <div class="radius-item">
+          <div class="radius-pill"></div>
+          <div class="radius-label">--r-full<br>9999px<br>buttons / pills</div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ── Components ── -->
+    <section class="sg-section" id="components">
+      <h2 class="sg-section-title">Components</h2>
+
+      <!-- Buttons -->
+      <div class="comp-group">
+        <div class="comp-label">Buttons</div>
+        <div class="comp-surface">
+          <button class="btn btn-primary">Get started free</button>
+          <button class="btn btn-secondary">Learn more</button>
+          <button class="btn btn-ghost">Sign in</button>
+          <button class="btn btn-primary btn-sm">Start free trial</button>
+        </div>
+      </div>
+
+      <!-- Badges -->
+      <div class="comp-group">
+        <div class="comp-label">Badges</div>
+        <div class="comp-surface">
+          <span class="badge badge-brand">Trial</span>
+          <span class="badge badge-brand">Pro</span>
+          <span class="badge badge-neutral">Free</span>
+        </div>
+      </div>
+
+      <!-- Feature cards -->
+      <div class="comp-group">
+        <div class="comp-label">Feature Cards</div>
+        <div class="comp-surface comp-surface-alt" style="align-items:stretch;gap:var(--sp-4);flex-wrap:wrap;">
+          <div class="card" style="flex:1;min-width:260px">
+            <div class="card-feature">
+              <div class="card-icon">📋</div>
+              <div>
+                <div class="card-title">Bills at a glance</div>
+                <div class="card-body">See everything due before your next paycheck — not just end of month. One-time bills included, no template required.</div>
+              </div>
+            </div>
+          </div>
+          <div class="card" style="flex:1;min-width:260px">
+            <div class="card-feature">
+              <div class="card-icon">📊</div>
+              <div>
+                <div class="card-title">Loan payoff tracking</div>
+                <div class="card-body">Progress bars, projected payoff dates, and compound interest estimates — built in, not bolted on.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stat cards -->
+      <div class="comp-group">
+        <div class="comp-label">Stat Cards (Manage tab style)</div>
+        <div class="comp-surface">
+          <div class="stat-card">
+            <div class="stat-label">Total Due</div>
+            <div class="stat-value">$2,151</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Paid</div>
+            <div class="stat-value green">$2,114</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Remaining</div>
+            <div class="stat-value">$36.98</div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+</body>
+</html>
