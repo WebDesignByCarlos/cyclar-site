@@ -45,6 +45,33 @@ git commit -m "description"
 git push
 ```
 
+## Design System
+
+The design system is established. Do not reinvent it — use what's there.
+
+- **`style-guide.html`** — visual reference for all design decisions; open in browser to review before building any UI
+- **`assets/css/tokens.css`** — CSS custom properties for colors, typography, spacing, radius, shadows, transitions; link in every HTML page:
+  ```html
+  <link rel="stylesheet" href="./assets/css/tokens.css">
+  ```
+- **Typography:** Manrope (Google Fonts, weights 400–800) for H1–H4; system font stack for body text. Load via:
+  ```html
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  ```
+- **Brand green:** `#059669` (`--clr-brand`); hover state `#047857` (`--clr-brand-dark`). Used only for interactive elements and key accents — not decorative fills.
+- **Spacing:** rem throughout — always use `--sp-*` tokens, never hardcode px values
+- **Light mode only** — no dark mode on the marketing site
+- **Screenshots** at `assets/images/screenshots/` — 26 JPGs covering all major app screens in light and dark mode; use for feature sections and visual reference
+- **Brand assets** at `assets/images/`:
+  - `logos/logo-light-mode.svg` — full logo (mark + wordmark) for light backgrounds; use this in the nav/header
+  - `logos/logomark.svg` — icon only, no text; use when space is tight
+  - `logos/wordmark-light-mode.svg` — text only, no icon
+  - `icons/favicon.svg` — browser tab icon (already wired in `index.html`)
+  - `icons/opengraph.png` — social sharing preview (already wired in `index.html`)
+  - Dark mode variants exist but are not used on this site (light mode only)
+
+---
+
 ## Design Requirements
 
 - Mobile-first — the majority of visitors will be on phones
