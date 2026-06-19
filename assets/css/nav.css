@@ -45,18 +45,12 @@
 .nav-logo {
   display: flex;
   align-items: center;
-  gap: var(--sp-2);
   text-decoration: none;
   flex-shrink: 0;
 }
 
-.nav-logo-mark {
-  height: 28px;
-  width: auto;
-}
-
-.nav-logo-word {
-  height: 16px;
+.nav-logo-img {
+  height: 36px;
   width: auto;
 }
 
