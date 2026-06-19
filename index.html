@@ -6,9 +6,48 @@
   <title>Cyclar — Know where you stand.</title>
   <link rel="icon" href="./assets/images/icons/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="./assets/images/icons/apple-touch-icon.png">
+  <meta name="description" content="Cyclar gives you a clear, reliable view of your finances — what's due, what's coming, and whether you're making progress.">
+  <meta property="og:title" content="Cyclar — Know where you stand.">
+  <meta property="og:description" content="A clear, reliable view of your financial life. Replace uncertainty with confidence.">
   <meta property="og:image" content="./assets/images/icons/opengraph.png">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/tokens.css">
+  <link rel="stylesheet" href="./assets/css/base.css">
+  <link rel="stylesheet" href="./assets/css/nav.css">
 </head>
 <body>
-  <h1>Coming soon.</h1>
+
+  <header class="site-nav" id="site-nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo" aria-label="Cyclar home">
+        <img src="./assets/images/logos/logomark.svg" alt="" class="nav-logo-mark" aria-hidden="true">
+        <img src="./assets/images/logos/wordmark-light-mode.svg" alt="Cyclar" class="nav-logo-word">
+      </a>
+      <nav class="nav-links" aria-label="Site navigation">
+        <a href="/#features">Features</a>
+        <a href="/#pricing">Pricing</a>
+        <a href="https://cyclar.app">Sign in</a>
+        <a href="https://cyclar.app/signup" class="nav-cta">Try free</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero, Problem, Features, Differentiators, Pricing, CTA sections go here -->
+  </main>
+
+  <script>
+    (function () {
+      var nav = document.getElementById('site-nav');
+      function onScroll() {
+        nav.classList.toggle('is-scrolled', window.scrollY > 8);
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+    })();
+  </script>
+
 </body>
 </html>

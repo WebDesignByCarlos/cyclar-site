@@ -1,0 +1,118 @@
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--clr-bg);
+  border-bottom: 1px solid transparent;
+  transition:
+    border-color var(--t-slow),
+    background var(--t-slow);
+}
+
+.site-nav.is-scrolled {
+  border-bottom-color: var(--clr-border);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+@supports (backdrop-filter: blur(1px)) {
+  .site-nav.is-scrolled {
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-nav {
+    transition: none;
+  }
+}
+
+/* ── Inner container ── */
+
+.nav-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--sp-6);
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ── Logo ── */
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.nav-logo-mark {
+  height: 28px;
+  width: auto;
+}
+
+.nav-logo-word {
+  height: 16px;
+  width: auto;
+}
+
+/* ── Links ── */
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-6);
+}
+
+.nav-links a {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--w-medium);
+  color: var(--clr-text-2);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color var(--t-fast);
+}
+
+.nav-links a:hover {
+  color: var(--clr-text);
+}
+
+.nav-links a:focus-visible {
+  outline: 2px solid var(--clr-brand);
+  outline-offset: 3px;
+  border-radius: var(--r-sm);
+}
+
+/* ── CTA button ── */
+
+.nav-links a.nav-cta {
+  background: var(--clr-brand);
+  color: var(--clr-text-inv);
+  padding: var(--sp-2) var(--sp-5);
+  border-radius: var(--r-full);
+  font-weight: var(--w-semibold);
+  transition: background var(--t-fast), color var(--t-fast);
+}
+
+.nav-links a.nav-cta:hover {
+  background: var(--clr-brand-dark);
+  color: var(--clr-text-inv);
+}
+
+/* ── Mobile ── */
+
+@media (max-width: 640px) {
+  .nav-inner {
+    height: 56px;
+    padding: 0 var(--sp-4);
+  }
+
+  .nav-links a:not(.nav-cta) {
+    display: none;
+  }
+}

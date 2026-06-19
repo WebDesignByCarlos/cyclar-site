@@ -78,6 +78,19 @@ The design system is established. Do not reinvent it — use what's there.
 - Fast and lightweight — no unnecessary JS, no heavy frameworks
 - Clear hierarchy: headline → value prop → features → pricing → CTA
 - Match the visual identity of the app (neutral palette, green accent only)
+- **No horizontal scrolling on mobile** — never allow overflow-x on any viewport. Reason through layouts at 320px, 375px, and 390px before considering a layout done. Common causes: `flex-shrink: 0` on wide elements, large `min-width` on flex children, `white-space: nowrap`, oversized `calc()` widths.
+
+## Site Structure
+
+- **`tasks/site-structure.md`** — source of truth for which pages exist, what sections they contain, build order, and SEO strategy. Read this at the start of any session that adds pages or sections.
+- **Clean URLs** — `vercel.json` sets `cleanUrls: true`. Never use `.html` extensions in internal links; write `/privacy`, `/terms`, `/style-guide`, etc.
+- **Existing pages:**
+  - `index.html` — main landing page (placeholder; not yet built)
+  - `privacy.html` — Privacy Policy → `/privacy`
+  - `terms.html` — Terms of Service → `/terms`
+  - `style-guide.html` — design reference → `/style-guide`
+
+---
 
 ## Copy Standards
 
