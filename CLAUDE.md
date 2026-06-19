@@ -59,6 +59,7 @@ The design system is established. Do not reinvent it — use what's there.
 - **`assets/css/tokens.css`** — CSS custom properties for colors, typography, spacing, radius, shadows, transitions
 - **`assets/css/base.css`** — global reset (box-sizing, margin/padding zero, body font, overflow-x hidden)
 - **`assets/css/nav.css`** — sticky nav component; `.is-scrolled` class toggled by inline JS on scroll
+- **`assets/css/index.css`** — homepage stylesheet; add each new section's styles here as it's built
 - **Typography:** Manrope (Google Fonts, weights 400–800) for H1–H4; system font stack for body text. Load via:
   ```html
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -66,7 +67,7 @@ The design system is established. Do not reinvent it — use what's there.
 - **Brand green:** `#059669` (`--clr-brand`); hover state `#047857` (`--clr-brand-dark`). Used only for interactive elements and key accents — not decorative fills.
 - **Spacing:** rem throughout — always use `--sp-*` tokens, never hardcode px values
 - **Light mode only** — no dark mode on the marketing site
-- **Screenshots** at `assets/images/screenshots/` — 26 JPGs covering all major app screens in light and dark mode; use for feature sections and visual reference
+- **Screenshots** at `assets/images/screenshots/` — JPGs of major app screens; light mode only on this site. Screenshots are pre-cropped by the owner before use — no system UI, browser chrome, or bottom black space. Do not add CSS cropping/object-position hacks; trust the source files.
 - **Brand assets** at `assets/images/`:
   - `logos/logo-light-mode.svg` — full logo (mark + wordmark), portrait-stacked (383×449). Not suitable for horizontal navs — the wordmark renders unreadably small at nav heights.
   - `logos/logomark.svg` — icon only (257×279). Use anywhere space is tight (e.g. favicons, small badges).
@@ -92,7 +93,7 @@ The design system is established. Do not reinvent it — use what's there.
 - **`tasks/site-structure.md`** — source of truth for which pages exist, what sections they contain, build order, and SEO strategy. Read this at the start of any session that adds pages or sections.
 - **Clean URLs** — `vercel.json` sets `cleanUrls: true`. Never use `.html` extensions in internal links; write `/privacy`, `/terms`, `/style-guide`, etc.
 - **Existing pages:**
-  - `index.html` — main landing page; nav built, hero and remaining sections pending
+  - `index.html` — main landing page; nav + hero built; Problem, Features, Differentiators, Pricing, CTA, Footer sections pending
   - `privacy.html` — Privacy Policy → `/privacy`
   - `terms.html` — Terms of Service → `/terms`
   - `style-guide.html` — design reference → `/style-guide`
@@ -106,6 +107,8 @@ The design system is established. Do not reinvent it — use what's there.
 - Use the approved taglines and positioning — do not invent new ones without updating the reference file
 - Pricing must match exactly what's in the reference; never hardcode pricing without checking there first
 - Feature descriptions must reflect actual app behavior — verify against the reference before writing
+- **No em dashes (—)** — replace with a colon, period, or rewrite the sentence. Em dashes read as informal and interrupt marketing copy. Use a colon when listing/elaborating, a period when two thoughts should stand alone.
+- **No "low-grade anxiety" or clinical anxiety framing** — use plain emotional language instead: "stop worrying about", "a quiet worry", "uncertainty". The marketing reference uses this framing internally but it does not belong in visitor-facing copy.
 
 ## Working Style
 

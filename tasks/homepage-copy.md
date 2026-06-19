@@ -19,7 +19,7 @@ Approved copy for all sections of the Cyclar marketing homepage. Drafted 2026-06
 > Know where you stand.
 
 **Sub-headline:**
-> Stop carrying that low-grade anxiety about whether you're okay. Cyclar gives you a clear, reliable view of your finances — what's due, what's coming, and whether you're making progress.
+> Stop worrying about your money. Cyclar gives you a clear, reliable view of your finances: what's due, what's coming, and whether you're making progress.
 
 **CTA button:** Try free for 30 days → `https://cyclar.app/signup`
 
@@ -37,7 +37,7 @@ Approved copy for all sections of the Cyclar marketing homepage. Drafted 2026-06
 > They know money comes in. Bills go out. Debt exists.
 > But they don't have a clear picture of how it all fits together.
 
-> That uncertainty creates stress — a low-grade hum of "Am I okay?" that follows you everywhere.
+> That uncertainty creates stress. A quiet worry that follows you everywhere.
 
 **Four questions (2×2 grid on desktop, stacked on mobile — larger, bolder type):**
 
