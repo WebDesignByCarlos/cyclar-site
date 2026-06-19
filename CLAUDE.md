@@ -136,10 +136,12 @@ The design system is established. Do not reinvent it — use what's there.
 ## Custom Slash Commands
 
 Project-level commands in `.claude/commands/`:
-- `deploy.md` — stages, commits, and pushes
+- `deploy.md` — stages, commits, and pushes; uses `AskUserQuestion` for deploy target, branch deletion, and wrap-up prompt
 - `new-branch.md` — creates a new feature branch
 - `wrap-up.md` — reviews session changes, updates CLAUDE.md, optionally deploys
 - `frontend-design.md` — design-lead mode for building UI; use with `/frontend-design` before any new section
+
+Any yes/no or multiple-choice decisions inside a command must use the `AskUserQuestion` tool — never prompt the user to type a response.
 
 ## Core Principles
 
