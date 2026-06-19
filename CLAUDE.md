@@ -49,7 +49,7 @@ git push
 
 The design system is established. Do not reinvent it — use what's there.
 
-- **`style-guide.html`** — visual reference for all design decisions; open in browser to review before building any UI
+- **`style-guide.html`** — visual reference for all design decisions; open in browser to review before building any UI. Now covers: colors, type, spacing, radius, shadows, transitions, forms (inputs/checkboxes/toggles), alerts, components (buttons, badges, category tags, cards, nav), and pricing cards. When building a section in index.html, copy class patterns from style-guide.html — the component CSS lives inline there and will need to be extracted to a shared CSS file as homepage sections are built.
 - **CSS load order** — every HTML page must link these in order:
   ```html
   <link rel="stylesheet" href="./assets/css/tokens.css">
