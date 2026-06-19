@@ -50,10 +50,15 @@ git push
 The design system is established. Do not reinvent it — use what's there.
 
 - **`style-guide.html`** — visual reference for all design decisions; open in browser to review before building any UI
-- **`assets/css/tokens.css`** — CSS custom properties for colors, typography, spacing, radius, shadows, transitions; link in every HTML page:
+- **CSS load order** — every HTML page must link these in order:
   ```html
   <link rel="stylesheet" href="./assets/css/tokens.css">
+  <link rel="stylesheet" href="./assets/css/base.css">
+  <link rel="stylesheet" href="./assets/css/[page].css">
   ```
+- **`assets/css/tokens.css`** — CSS custom properties for colors, typography, spacing, radius, shadows, transitions
+- **`assets/css/base.css`** — global reset (box-sizing, margin/padding zero, body font, overflow-x hidden)
+- **`assets/css/nav.css`** — sticky nav component; `.is-scrolled` class toggled by inline JS on scroll
 - **Typography:** Manrope (Google Fonts, weights 400–800) for H1–H4; system font stack for body text. Load via:
   ```html
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -63,9 +68,10 @@ The design system is established. Do not reinvent it — use what's there.
 - **Light mode only** — no dark mode on the marketing site
 - **Screenshots** at `assets/images/screenshots/` — 26 JPGs covering all major app screens in light and dark mode; use for feature sections and visual reference
 - **Brand assets** at `assets/images/`:
-  - `logos/logo-light-mode.svg` — full logo (mark + wordmark) for light backgrounds; use this in the nav/header
-  - `logos/logomark.svg` — icon only, no text; use when space is tight
-  - `logos/wordmark-light-mode.svg` — text only, no icon
+  - `logos/logo-light-mode.svg` — full logo (mark + wordmark), portrait-stacked (383×449). Not suitable for horizontal navs — the wordmark renders unreadably small at nav heights.
+  - `logos/logomark.svg` — icon only (257×279). Use in nav and anywhere space is tight.
+  - `logos/wordmark-light-mode.svg` — text only (383×123). Use alongside the logomark in the nav.
+  - **Nav logo pattern:** composite `logomark.svg` (height: 28px) + `wordmark-light-mode.svg` (height: 16px) in a flex row — this is what the live nav uses.
   - `icons/favicon.svg` — browser tab icon (already wired in `index.html`)
   - `icons/opengraph.png` — social sharing preview (already wired in `index.html`)
   - Dark mode variants exist but are not used on this site (light mode only)
@@ -85,10 +91,11 @@ The design system is established. Do not reinvent it — use what's there.
 - **`tasks/site-structure.md`** — source of truth for which pages exist, what sections they contain, build order, and SEO strategy. Read this at the start of any session that adds pages or sections.
 - **Clean URLs** — `vercel.json` sets `cleanUrls: true`. Never use `.html` extensions in internal links; write `/privacy`, `/terms`, `/style-guide`, etc.
 - **Existing pages:**
-  - `index.html` — main landing page (placeholder; not yet built)
+  - `index.html` — main landing page; nav built, hero and remaining sections pending
   - `privacy.html` — Privacy Policy → `/privacy`
   - `terms.html` — Terms of Service → `/terms`
   - `style-guide.html` — design reference → `/style-guide`
+- **Homepage copy** — full approved copy for all 7 sections is in `tasks/homepage-copy.md`. Read this before building any section.
 
 ---
 
@@ -128,6 +135,7 @@ Project-level commands in `.claude/commands/`:
 - `deploy.md` — stages, commits, and pushes
 - `new-branch.md` — creates a new feature branch
 - `wrap-up.md` — reviews session changes, updates CLAUDE.md, optionally deploys
+- `frontend-design.md` — design-lead mode for building UI; use with `/frontend-design` before any new section
 
 ## Core Principles
 
