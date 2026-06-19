@@ -69,9 +69,10 @@ The design system is established. Do not reinvent it — use what's there.
 - **Screenshots** at `assets/images/screenshots/` — 26 JPGs covering all major app screens in light and dark mode; use for feature sections and visual reference
 - **Brand assets** at `assets/images/`:
   - `logos/logo-light-mode.svg` — full logo (mark + wordmark), portrait-stacked (383×449). Not suitable for horizontal navs — the wordmark renders unreadably small at nav heights.
-  - `logos/logomark.svg` — icon only (257×279). Use in nav and anywhere space is tight.
-  - `logos/wordmark-light-mode.svg` — text only (383×123). Use alongside the logomark in the nav.
-  - **Nav logo pattern:** composite `logomark.svg` (height: 28px) + `wordmark-light-mode.svg` (height: 16px) in a flex row — this is what the live nav uses.
+  - `logos/logomark.svg` — icon only (257×279). Use anywhere space is tight (e.g. favicons, small badges).
+  - `logos/wordmark-light-mode.svg` — text only (383×123).
+  - `logos/light-mode-horizontal.svg` — combined mark + wordmark, horizontal layout (690×279). This is what the live nav uses.
+  - **Nav logo pattern:** single `<img>` of `light-mode-horizontal.svg` at `height: 36px; width: auto;`
   - `icons/favicon.svg` — browser tab icon (already wired in `index.html`)
   - `icons/opengraph.png` — social sharing preview (already wired in `index.html`)
   - Dark mode variants exist but are not used on this site (light mode only)
