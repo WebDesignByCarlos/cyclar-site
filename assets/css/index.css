@@ -143,12 +143,28 @@
 }
 
 .feature-phone {
+  position: relative;
   width: clamp(220px, 28vw, 300px);
-  border-radius: var(--r-xl);
+  border: 7px solid #1a1a1a;
+  border-radius: 36px;
   overflow: hidden;
   box-shadow:
     var(--shadow-lg),
     0 24px 64px -16px rgba(5, 150, 105, 0.14);
+}
+
+.feature-phone::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 56px;
+  height: 18px;
+  background: #1a1a1a;
+  border-radius: var(--r-full);
+  z-index: 1;
+  pointer-events: none;
 }
 
 .feature-screenshot {
@@ -295,11 +311,26 @@
   position: relative;
   z-index: 1;
   width: clamp(200px, 30vw, 300px);
-  border-radius: var(--r-xl);
+  border: 7px solid #1a1a1a;
+  border-radius: 36px;
   overflow: hidden;
   box-shadow:
     var(--shadow-lg),
     0 24px 64px -16px rgba(5, 150, 105, 0.14);
+}
+
+.hero-phone::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 56px;
+  height: 18px;
+  background: #1a1a1a;
+  border-radius: var(--r-full);
+  z-index: 2;
+  pointer-events: none;
 }
 
 .hero-screenshot {
