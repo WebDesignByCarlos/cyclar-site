@@ -146,7 +146,7 @@
   position: relative;
   width: clamp(220px, 28vw, 300px);
   border: 7px solid #1a1a1a;
-  border-radius: 36px;
+  border-radius: 32px;
   overflow: hidden;
   box-shadow:
     var(--shadow-lg),
@@ -312,7 +312,7 @@
   z-index: 1;
   width: clamp(200px, 30vw, 300px);
   border: 7px solid #1a1a1a;
-  border-radius: 36px;
+  border-radius: 32px;
   overflow: hidden;
   box-shadow:
     var(--shadow-lg),

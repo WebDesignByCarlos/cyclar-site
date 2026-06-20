@@ -67,7 +67,8 @@ The design system is established. Do not reinvent it — use what's there.
 - **Brand green:** `#059669` (`--clr-brand`); hover state `#047857` (`--clr-brand-dark`). Used only for interactive elements and key accents — not decorative fills.
 - **Spacing:** rem throughout — always use `--sp-*` tokens, never hardcode px values
 - **Light mode only** — no dark mode on the marketing site
-- **Screenshots** at `assets/images/screenshots/` — JPGs of major app screens; light mode only on this site. Screenshots are pre-cropped by the owner before use — no system UI, browser chrome, or bottom black space. Do not add CSS cropping/object-position hacks; trust the source files.
+- **Screenshots** at `assets/images/screenshots/` — PNGs of major app screens; light mode only on this site. Current files: `manage.png`, `bills.png`, `analytics.png`, `debt-overview.png`, `debt-history.png`, `settings.png`, `subcategories.png`. Filenames must use hyphens, never spaces. Screenshots are pre-cropped by the owner before use — no system UI, browser chrome, or bottom black space. Do not add CSS cropping/object-position hacks; trust the source files.
+- **Phone frame** — `.hero-phone` and `.feature-phone` use a pure CSS phone frame: `7px solid #1a1a1a` border, `border-radius: 32px`, `overflow: hidden`. A `::before` pseudo-element renders the dynamic island pill (`56×18px`, `border-radius: var(--r-full)`). Do not add image-based phone frames or extra wrapper divs — the frame is entirely CSS on the existing container.
 - **Brand assets** at `assets/images/`:
   - `logos/logo-light-mode.svg` — full logo (mark + wordmark), portrait-stacked (383×449). Not suitable for horizontal navs — the wordmark renders unreadably small at nav heights.
   - `logos/logomark.svg` — icon only (257×279). Use anywhere space is tight (e.g. favicons, small badges).
