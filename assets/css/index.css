@@ -339,6 +339,119 @@
   display: block;
 }
 
+/* ════════════════════════════════════════════
+   DIFFERENTIATORS
+════════════════════════════════════════════ */
+
+.differentiators {
+  background: var(--clr-bg-alt);
+  padding: var(--sp-24) 0;
+}
+
+.differentiators-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--sp-6);
+}
+
+.diff-header {
+  text-align: center;
+  margin-bottom: var(--sp-12);
+}
+
+.diff-title {
+  font-family: var(--font-head);
+  font-size: var(--text-3xl);
+  font-weight: var(--w-bold);
+  color: var(--clr-text);
+  line-height: var(--leading-tight);
+  margin: 0;
+}
+
+.diff-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-6);
+}
+
+.diff-card {
+  background: var(--clr-bg);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--r-xl);
+  padding: var(--sp-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.diff-card-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-1);
+}
+
+.diff-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: var(--clr-brand-tint);
+  border-radius: var(--r-md);
+  color: var(--clr-brand);
+  flex-shrink: 0;
+}
+
+.diff-card-eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--w-medium);
+  color: var(--clr-text-3);
+  letter-spacing: 0.01em;
+}
+
+.diff-card-headline {
+  font-family: var(--font-head);
+  font-size: var(--text-xl);
+  font-weight: var(--w-bold);
+  color: var(--clr-text);
+  line-height: var(--leading-snug);
+  margin: 0;
+}
+
+.diff-card-body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: var(--clr-text-2);
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .diff-cards {
+    grid-template-columns: 1fr;
+    gap: var(--sp-4);
+  }
+
+  .differentiators {
+    padding: var(--sp-16) 0;
+  }
+
+  .diff-title {
+    font-size: var(--text-2xl);
+  }
+
+  .diff-header {
+    margin-bottom: var(--sp-8);
+  }
+
+  .differentiators-inner {
+    padding: 0 var(--sp-5);
+  }
+}
+
+
 /* ── Entrance animations ── */
 
 @media (prefers-reduced-motion: no-preference) {
