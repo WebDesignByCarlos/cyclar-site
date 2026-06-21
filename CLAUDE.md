@@ -59,7 +59,7 @@ The design system is established. Do not reinvent it — use what's there.
 - **`assets/css/tokens.css`** — CSS custom properties for colors, typography, spacing, radius, shadows, transitions
 - **`assets/css/base.css`** — global reset (box-sizing, margin/padding zero, body font, overflow-x hidden)
 - **`assets/css/nav.css`** — sticky nav component; `.is-scrolled` class toggled by inline JS on scroll
-- **`assets/css/index.css`** — homepage stylesheet; add each new section's styles here as it's built
+- **`assets/css/index.css`** — homepage stylesheet; add each new section's styles here as it's built. Button utilities (`.btn`, `.btn-primary`, `.btn-secondary`, `.btn-outline`, `.btn-full`) are already defined here — use them for any button in future sections.
 - **Typography:** Manrope (Google Fonts, weights 400–800) for H1–H4; system font stack for body text. Load via:
   ```html
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -94,7 +94,7 @@ The design system is established. Do not reinvent it — use what's there.
 - **`tasks/site-structure.md`** — source of truth for which pages exist, what sections they contain, build order, and SEO strategy. Read this at the start of any session that adds pages or sections.
 - **Clean URLs** — `vercel.json` sets `cleanUrls: true`. Never use `.html` extensions in internal links; write `/privacy`, `/terms`, `/style-guide`, etc.
 - **Existing pages:**
-  - `index.html` — main landing page; nav + hero + Problem + Features + Differentiators sections built; Pricing, CTA, Footer sections pending
+  - `index.html` — main landing page; nav + hero + Problem + Features + Differentiators + Pricing sections built; CTA, Footer sections pending
   - `privacy.html` — Privacy Policy → `/privacy`
   - `terms.html` — Terms of Service → `/terms`
   - `style-guide.html` — design reference → `/style-guide`
