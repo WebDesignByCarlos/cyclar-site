@@ -54,11 +54,14 @@ The design system is established. Do not reinvent it — use what's there.
   ```html
   <link rel="stylesheet" href="./assets/css/tokens.css">
   <link rel="stylesheet" href="./assets/css/base.css">
+  <link rel="stylesheet" href="./assets/css/nav.css">
+  <link rel="stylesheet" href="./assets/css/footer.css">
   <link rel="stylesheet" href="./assets/css/[page].css">
   ```
 - **`assets/css/tokens.css`** — CSS custom properties for colors, typography, spacing, radius, shadows, transitions
 - **`assets/css/base.css`** — global reset (box-sizing, margin/padding zero, body font, overflow-x hidden)
 - **`assets/css/nav.css`** — sticky nav component; `.is-scrolled` class toggled by inline JS on scroll
+- **`assets/css/footer.css`** — shared footer component; link on every page. Footer uses vertical `logo-light-mode.svg` at 72px, wrapped in `<a href="/">` — do not revert to logomark + span
 - **`assets/css/index.css`** — homepage stylesheet; add each new section's styles here as it's built. Button utilities (`.btn`, `.btn-primary`, `.btn-secondary`, `.btn-outline`, `.btn-full`) are already defined here — use them for any button in future sections.
 - **Typography:** Manrope (Google Fonts, weights 400–800) for H1–H4; system font stack for body text. Load via:
   ```html
