@@ -788,78 +788,7 @@
    FOOTER
 ════════════════════════════════════════════ */
 
-.site-footer {
-  background: var(--clr-bg-alt);
-  border-top: 1px solid var(--clr-border);
-  padding: var(--sp-12) 0;
-}
-
-.footer-inner {
-  max-width: var(--max-w);
-  margin: 0 auto;
-  padding: 0 var(--sp-6);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--sp-5);
-}
-
-.footer-brand {
-  display: flex;
-  align-items: center;
-  gap: var(--sp-2);
-}
-
-.footer-logomark {
-  height: 22px;
-  width: auto;
-}
-
-.footer-brand-name {
-  font-family: var(--font-head);
-  font-size: var(--text-base);
-  font-weight: var(--w-semibold);
-  color: var(--clr-text);
-  letter-spacing: -0.01em;
-}
-
-.footer-links {
-  display: flex;
-  align-items: center;
-  gap: var(--sp-6);
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.footer-links a {
-  font-family: var(--font-body);
-  font-size: var(--text-sm);
-  color: var(--clr-text-2);
-  text-decoration: none;
-  transition: color var(--t-fast);
-}
-
-.footer-links a:hover {
-  color: var(--clr-text);
-}
-
-.footer-copy {
-  font-family: var(--font-body);
-  font-size: var(--text-sm);
-  color: var(--clr-text-3);
-  margin: 0;
-}
-
-@media (max-width: 767px) {
-  .site-footer {
-    padding: var(--sp-10) 0;
-  }
-
-  .footer-inner {
-    padding: 0 var(--sp-5);
-    gap: var(--sp-4);
-  }
-}
+/* Footer styles live in footer.css (shared with legal pages) */
 
 
 /* ── Entrance animations ── */

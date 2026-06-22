@@ -94,7 +94,7 @@ The design system is established. Do not reinvent it — use what's there.
 - **`tasks/site-structure.md`** — source of truth for which pages exist, what sections they contain, build order, and SEO strategy. Read this at the start of any session that adds pages or sections.
 - **Clean URLs** — `vercel.json` sets `cleanUrls: true`. Never use `.html` extensions in internal links; write `/privacy`, `/terms`, `/style-guide`, etc.
 - **Existing pages:**
-  - `index.html` — main landing page; nav + hero + Problem + Features + Differentiators + Pricing sections built; CTA, Footer sections pending
+  - `index.html` — main landing page; all 7 sections complete (Nav, Hero, Problem, Features, Differentiators, Pricing, Final CTA, Footer)
   - `privacy.html` — Privacy Policy → `/privacy`
   - `terms.html` — Terms of Service → `/terms`
   - `style-guide.html` — design reference → `/style-guide`
