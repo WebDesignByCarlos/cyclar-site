@@ -102,6 +102,9 @@ The design system is established. Do not reinvent it — use what's there.
   - `terms.html` — Terms of Service → `/terms`
   - `style-guide.html` — design reference → `/style-guide`
 - **Homepage copy** — full approved copy for all 7 sections is in `tasks/homepage-copy.md`. Read this before building any section.
+- **Google Analytics** — GA4 (Measurement ID: `G-94C57NDFVC`) is installed on all pages. Any new page must include the gtag.js snippet in `<head>`, immediately after `<meta charset="UTF-8" />`. Do not add GTM — use direct GA4 until ads require it.
+- **`sitemap.xml`** — lists all public pages (`/`, `/privacy`, `/terms`). Update this when adding new public-facing pages. `/style-guide` is intentionally excluded — it's a dev reference, not for indexing.
+- **`robots.txt`** — allows all crawlers and points to `https://cyclar.co/sitemap.xml`. No changes needed unless crawl rules change.
 
 ---
 

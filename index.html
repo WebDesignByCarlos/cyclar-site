@@ -280,6 +280,21 @@
           <img src="./assets/images/logos/logo-light-mode.svg" alt="Cyclar" class="footer-logo">
         </a>
       </div>
+      <div class="footer-signup">
+        <p class="footer-signup-label">Get notified of new features and updates.</p>
+        <form class="footer-signup-form" id="footer-signup-form" novalidate>
+          <input
+            type="email"
+            class="footer-signup-input"
+            id="footer-signup-email"
+            placeholder="your@email.com"
+            autocomplete="email"
+            required
+          >
+          <button type="submit" class="btn btn-primary footer-signup-btn">Notify me</button>
+        </form>
+        <p class="footer-signup-feedback" id="footer-signup-feedback" aria-live="polite"></p>
+      </div>
       <nav class="footer-links" aria-label="Footer navigation">
         <a href="/privacy">Privacy Policy</a>
         <a href="/terms">Terms of Service</a>
@@ -296,6 +311,63 @@
         nav.classList.toggle('is-scrolled', window.scrollY > 8);
       }
       window.addEventListener('scroll', onScroll, { passive: true });
+    })();
+
+    (function () {
+      var SUPABASE_URL = 'https://fhaodeubdsgimtzqsrvv.supabase.co';
+      // anon/public key — insert-only via RLS, safe to expose
+      var SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZoYW9kZXViZHNnaW10enFzcnZ2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg3MTE4MjMsImV4cCI6MjA5NDI4NzgyM30.fK_xd-ci9e6JEmkx1DAJoMmd5Wzb4V5RujElEF4LF40';
+
+      var form = document.getElementById('footer-signup-form');
+      var feedback = document.getElementById('footer-signup-feedback');
+      if (!form) return;
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var emailInput = document.getElementById('footer-signup-email');
+        var email = emailInput.value.trim();
+        if (!email) return;
+
+        var btn = form.querySelector('button[type="submit"]');
+        btn.disabled = true;
+        btn.textContent = 'Sending…';
+        feedback.textContent = '';
+        feedback.className = 'footer-signup-feedback';
+
+        fetch(SUPABASE_URL + '/rest/v1/email_subscribers', {
+          method: 'POST',
+          headers: {
+            'apikey': SUPABASE_ANON_KEY,
+            'Authorization': 'Bearer ' + SUPABASE_ANON_KEY,
+            'Content-Type': 'application/json',
+            'Prefer': 'return=minimal'
+          },
+          body: JSON.stringify({ email: email, source: 'footer' })
+        })
+        .then(function (res) {
+          if (res.status === 201) {
+            form.style.display = 'none';
+            feedback.textContent = "You’re on the list. We’ll be in touch.";
+            feedback.className = 'footer-signup-feedback footer-signup-feedback--success';
+          } else if (res.status === 409) {
+            feedback.textContent = "You’re already on the list.";
+            feedback.className = 'footer-signup-feedback footer-signup-feedback--success';
+            btn.disabled = false;
+            btn.textContent = 'Notify me';
+          } else {
+            feedback.textContent = 'Something went wrong. Try again.';
+            feedback.className = 'footer-signup-feedback footer-signup-feedback--error';
+            btn.disabled = false;
+            btn.textContent = 'Notify me';
+          }
+        })
+        .catch(function () {
+          feedback.textContent = 'Something went wrong. Try again.';
+          feedback.className = 'footer-signup-feedback footer-signup-feedback--error';
+          btn.disabled = false;
+          btn.textContent = 'Notify me';
+        });
+      });
     })();
   </script>
 
